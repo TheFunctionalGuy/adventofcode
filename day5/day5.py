@@ -23,6 +23,9 @@ class IntcodeComputer:
         self.buffered_inputs = deque(buffered_inputs)
         self.instruction_pointer = 0
 
+    def add_input(self, received_input: int):
+        self.buffered_inputs.append(received_input)
+
     def fetch_arguments(self, number_of_arguments: int, modes: List[int],
                         contains_write_to_address: bool = False) -> Tuple:
         arguments = []
